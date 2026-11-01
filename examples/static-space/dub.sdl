@@ -1,0 +1,3 @@
+name "georef-d-example-static-space"
+dependency "georef-d" path="../.."
+sourcePaths "source"

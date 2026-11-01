@@ -1,0 +1,4 @@
+name "georef-d-benchmarks"
+description "Benchmarks for georef-d core paths"
+dependency "georef-d" path=".."
+sourcePaths "source"

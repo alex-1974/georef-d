@@ -1,0 +1,7 @@
+georef-d-test-library
+libgeoref-d.a
+benchmarks/georef-d-benchmarks
+examples/*/georef-d-example-*
+tests/consumer/georef-d-consumer-smoke
+docs.json
+docs

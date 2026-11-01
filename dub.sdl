@@ -1,4 +1,5 @@
 name "georef-d"
+version "0.1.0"
 description "Generic coordinate-space and reference-transformation infrastructure for D"
 homepage "https://github.com/alex-1974/georef-d"
 authors "Alexander Bernardi"

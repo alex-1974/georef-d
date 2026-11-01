@@ -1,0 +1,3 @@
+name "georef-d-example-custom-transform"
+dependency "georef-d" path="../.."
+sourcePaths "source"

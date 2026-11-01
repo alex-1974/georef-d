@@ -1,0 +1,4 @@
+name "georef-d-consumer-smoke"
+description "External consumer smoke test for georef-d"
+dependency "georef-d" path="../.."
+sourcePaths "source"
