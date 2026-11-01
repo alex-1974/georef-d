@@ -1,0 +1,8 @@
+name "georef-d"
+description "Generic coordinate-space and reference-transformation infrastructure for D"
+homepage "https://github.com/alex-1974/georef-d"
+authors "Alexander Bernardi"
+license "MIT"
+targetType "library"
+sourcePaths "source"
+

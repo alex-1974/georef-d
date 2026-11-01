@@ -1,0 +1,6 @@
+name "georef-d-tests"
+description "Tests for georef-d"
+targetType "executable"
+dependency "georef-d" path=".."
+sourcePaths "source"
+
