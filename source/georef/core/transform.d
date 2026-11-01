@@ -43,13 +43,17 @@ if (isSpace!Source && isSpace!Target
         const @safe pure nothrow
     {
         result = AffineTransform!(Target, Source, T, Dimension).init;
-        T[Dimension][Dimension] augmented;
+        // The augmented matrix contains the source matrix and an identity
+        // matrix side by side. Its second axis therefore has 2 * Dimension
+        // columns; using Dimension here silently overwrites the source matrix
+        // and later indexes past the end for every non-trivial inverse.
+        T[Dimension * 2][Dimension] augmented;
         foreach (row; 0 .. Dimension)
         {
             foreach (column; 0 .. Dimension)
                 augmented[row][column] = matrix[row][column];
             augmented[row][Dimension .. $] = 0;
-            augmented[row][row] = 1;
+            augmented[row][Dimension + row] = 1;
         }
         foreach (column; 0 .. Dimension)
         {
@@ -76,7 +80,7 @@ if (isSpace!Source && isSpace!Target
                 result.matrix[row][column] = augmented[row][Dimension + column];
         foreach (row; 0 .. Dimension)
         {
-            T value;
+            T value = 0;
             foreach (column; 0 .. Dimension)
                 value += result.matrix[row][column] * offset[column];
             result.offset[row] = -value;

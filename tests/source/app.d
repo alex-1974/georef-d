@@ -67,6 +67,8 @@ void main() {
     assert(pixelToLocal.forward(pixel).values == [12.0, 26.0]);
     AffineTransform!(LocalSpace, PixelSpace, double, 2) inverse;
     assert(pixelToLocal.tryInverse(inverse));
+    auto roundTrip = inverse.forward(pixelToLocal.forward(Pixel([3.0, 4.0])));
+    assert(roundTrip.values == [3.0, 4.0]);
     assert(inverse.forward(local).values == [1.0, 2.0]);
     auto pipeline = compose(pixelToLocal, localToWorld);
     World world = pipeline.forward(pixel);
